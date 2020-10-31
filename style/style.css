@@ -1,0 +1,430 @@
+html,body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.wrapper {}
+
+@media (max-width:762px) {
+    .logo_mobile > img {
+        max-width: 30px;
+    }
+}
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 50;
+}
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 2;
+}
+.container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0px 10px ;
+}
+.header__body {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    align-items: center;
+}
+.header__logo {
+    flex: 0 0 60px;
+    z-index: 3;
+}
+
+.header__logo {
+    max-width: 100%;
+}
+
+.header__burger {
+    display: none;
+}
+
+.header__menu {
+    z-index: 2;
+}
+.header__list {
+    display: flex;
+}
+
+.header__list li {
+    list-style: none;
+    margin: 0px 0px 0px 20px;
+}
+
+.header__link {
+    font-size: 18px;
+}
+@media (max-width:767px) {
+    .header__burger {
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 20px;
+        position: relative;
+        z-index: 3;
+    }
+    .header__burger span {
+        position: absolute;
+        background-color: #000;
+        left: 0;
+        width: 100%;
+        height: 2.5px;
+        top: 9px;
+        transition: all 0.4s ease 0s;
+    }
+    .header__burger::before ,
+    .header__burger::after {
+        content: '';
+        background-color: #000;
+        position: absolute;
+        width: 100%;
+        height: 2.5px;
+        left: 0;
+        transition: all 0.4s ease 0s;
+    }
+    .header__burger::before {
+        top: 0;
+    }
+    .header__burger::after {
+        bottom: 0;
+    }
+
+    .header__burger.active span {
+        transform: scale(0);
+    }
+
+    .header__burger.active::before {
+        transform: rotate(45deg);
+        top: 9px;
+    }
+
+    .header__burger.active::after {
+        transform: rotate(-45deg);
+        bottom: 9px;
+    }
+
+    .header__menu {
+        position: fixed;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: whitesmoke;
+        padding: 100px 10px 20px 10px;
+        transition: 0.4s;
+    }
+
+    .header__menu.active {
+        top: 0;
+    }
+
+    .header__body {
+        height: 50px;
+    }
+    .header__logo {
+        flex:0 0 40px;
+    }
+    .header__list {
+        display: block;
+    }
+    .header__list li {
+        margin:0px 0px 20px 0px;
+    }
+}
+
+
+/*Главная*/
+.content {
+    background-image: url('../img/123.jpg');
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 100px 0px 0px 0px;
+}
+.container {
+  
+}
+
+.content__text {
+    margin-top: 320px;
+}
+
+.content__text p {
+    margin: 0px 0px 20px 0px;
+    color: white;
+    font-size: 30px;
+}
+
+.content__text>a {
+    color: white;
+    font-size: 25px;
+    font-family: 'Noto Sans', sans-serif;
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .3s;
+} 
+
+.content__text:hover {
+    transition: 0.5s;
+    background-size: 100% 2px;
+}
+/*popup окно*/
+.popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    top: 0;
+    left: 0;
+    padding: 100px 0px 0px 0px;
+    color: #fff;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.popup:target{
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup__area {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.popup_body {
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 10px;
+}
+.popup_content {
+    background-color: #fff;
+    color: #000;
+    max-width: 800px;
+    padding: 50px;
+    position: relative;
+}
+
+.popup_close {
+    position: absolute;
+    top: 10px;
+    font-size: 20px;
+    color: #000;
+    text-decoration: none;
+}
+
+.popup_title {
+    font-size: 35px;
+    font-family: 'Noto Sans', sans-serif;
+    margin: 1em;
+}
+.popup_text {
+    font-size: 45px;
+    font: 1em sans-serif;
+    
+}
+
+/*Услуги*/
+
+.services_container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.services_text {
+    padding: 110px;
+}
+
+.services_text__p {
+    font-size: 22.5px;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+@media (max-width:904px) {
+    .services_img > img {
+        max-width: 450px;
+    }
+}
+
+@media (max-width:870px) {
+    .services_img > img {
+        max-width: 350px;
+    }
+}
+
+@media (max-width:870px) {
+    .services_text__p {
+        font-size: 18px;
+    }
+}
+
+@media (max-width:840px) {
+    .services_text {
+        padding: 60px;
+    }
+}
+
+@media(max-width:636px) {
+    .services_container {
+        display: block;
+    }
+    .services {
+        text-align: center;
+    }
+}
+
+@media(max-width:636px) {
+    .services_img > img {
+        max-width: 250px;
+    }
+}
+
+/*Цены на услуги*/
+
+.prices_container {
+    display: flex;
+    justify-content:space-around;
+}
+.prices_img {
+    margin-top: 20px;
+}
+.prices_text {
+    padding: 70px;
+}
+.prices_text_p {
+    font-size: 22.5px;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+@media (max-width:904px) {
+    .prices_img > img {
+        max-width: 450px;
+    }
+}
+
+@media (max-width:870px) {
+    .prices_img > img {
+        max-width: 350px;
+        padding: 0;
+    }
+}
+
+@media (max-width:636px) {
+    .prices_img > img {
+        max-width: 250px;
+        text-align: center;
+        padding: 0;
+    }
+}
+
+@media (max-width:870px) {
+    .prices_text_p {
+        font-size: 18px;
+    }
+}
+
+@media (max-width:870px) {
+    .prices_text {
+        padding: 60px;
+    }
+}
+
+@media(max-width:636px) {
+    .prices_container {
+        display: block;
+    }
+    .prices {
+        text-align: center;
+        padding: 0;
+    }
+}
+
+/*Заказ эвакуатора*/
+
+.order {
+    background-color: whitesmoke;
+    margin-top: 55px;
+    padding-bottom: 25px;
+    padding-top:50px ;
+    padding-bottom: 50px;
+}
+.order_container {
+    max-width: 940px;
+    margin: 0 auto;
+}
+.order_text {
+    font-size: 25px;
+    font-family: 'Roboto Slab', serif;
+}
+.order_text p {
+    text-shadow: wheat;
+}
+
+.order_img > img{
+    width: 450px;
+}
+
+@media (max-width:950px) {
+    .order_img > img{
+        max-width:350px ;
+    }
+    .order_container {
+        text-align: center;
+    }
+}
+
+@media (max-width:550px) {
+    .order_text {
+        font-size: 18px;
+    }
+}
+
+@media (max-width:400px) {
+    .order_text {
+        font-size: 14px;
+    }
+    .order_img > img {
+        max-width: 250px;
+        margin-top: 20px;
+    }
+} 
+
+/*я в соц.сетях*/
+.social {
+    margin-top: 60px;
+    background-color: whitesmoke;
+    padding: 45px;
+}
+
+.socia_text {
+    font-size: 35px;
+}
+.social_icon {
+    display: flex;
+    justify-content: space-around;
+}
+.icon_img {
+    width: 50px;
+}
+
